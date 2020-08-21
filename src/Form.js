@@ -1,8 +1,9 @@
 import React from 'react'
+import './App.css';
 
 
 export default function Form(props) {
-const {update, submit, values, checkBox} = props
+const {update, submit, values, checkBox, disabled, errors} = props
 
 const onChange = evt => {
     const {name, value} = evt.target
@@ -35,7 +36,7 @@ const onSubmit = evt => {
                 />            
              </label>
 
-             <label>Role:&nbsp;
+             <label>Size:&nbsp;
                 <select value={values.size} onChange={onChange}name='size'>
                     <option value="">-- Select a Size --</option>
                     <option value="small">Small</option>
@@ -78,9 +79,27 @@ const onSubmit = evt => {
                       onChange={onCheckboxChange}
                     />
                 </label>
+                <div>
+                    <label className="special">Special Instrtuction:&nbsp;
+                    <textarea 
+                    value={values.special}
+                    onChange={onChange}
+                    size="50"
+                    name='special'
+                    placeholder='Special Instruction'
+                    rows={5}
+                    cols={30} 
+                    type="textarea"
+                    />            
+                    </label>
+                </div>
             </div>
-
-             <button >done</button>
+                <div className='errors'>
+                    <div>{errors.username}</div>
+                    <div>{errors.size}</div>
+                    <div>{errors.special}</div>
+                 </div>
+             <button disabled={disabled}>done</button>
             </div>
         </div>
     

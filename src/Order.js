@@ -11,14 +11,17 @@ import React from 'react'
 
    
     return (
-        <div>
-            <h3>Username: {order.username}</h3>
+        <div className="order">
+            <h2>Username: {order.username}</h2>
             <h3>Size: {order.size}</h3>
             <h3>Topping: 
             {order.topping.map( top => {
                 return <li>{top}</li>
             })}
             </h3>
+            <div>
+                <h3><p>Special instruction: {order.special}</p></h3>
+            </div>
         </div>
     )
 }

@@ -8,3 +8,6 @@
   text-decoration: none;
   margin: 0% 15% 0% 15%;
 }
+.special input {
+  height: 100px;
+}
