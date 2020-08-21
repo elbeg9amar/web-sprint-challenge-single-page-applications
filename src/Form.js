@@ -99,7 +99,7 @@ const onSubmit = evt => {
                     <div>{errors.size}</div>
                     <div>{errors.special}</div>
                  </div>
-             <button disabled={disabled}>done</button>
+             <button disabled={disabled} id='submit'>done</button>
             </div>
         </div>
     
