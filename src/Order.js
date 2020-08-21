@@ -1,5 +1,6 @@
 import React from 'react'
 
+
  function Order (props) {
    const {order} = props
 
@@ -12,6 +13,7 @@ import React from 'react'
    
     return (
         <div className="order">
+            <h1>Your Order ... </h1>
             <h2>Username: {order.username}</h2>
             <h3>Size: {order.size}</h3>
             <h3>Topping: 

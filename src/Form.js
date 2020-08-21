@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import {Link} from 'react-router-dom'
 
 
 export default function Form(props) {
@@ -25,7 +26,7 @@ const onSubmit = evt => {
         <div>
             <h1> Start Order</h1>
             <div>
-             <label>Username:&nbsp;
+             <label className="user">Username:&nbsp;
                 <input
                   value={values.username}
                   onChange={onChange}
@@ -99,7 +100,9 @@ const onSubmit = evt => {
                     <div>{errors.size}</div>
                     <div>{errors.special}</div>
                  </div>
-             <button disabled={disabled} id='submit'>done</button>
+                 
+                  <button disabled={disabled} id='submit'>done</button>
+                
             </div>
         </div>
     

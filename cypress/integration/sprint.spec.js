@@ -8,6 +8,9 @@ describe('Spring', () => {
             cy.get('#submit').click()
             cy.contains('elbeg').should('exist')
         })
+        it('can select one of the options in checkbox', () => {
+            cy.get('[type="checkbox"]').check() 
+        })
         
     })
 

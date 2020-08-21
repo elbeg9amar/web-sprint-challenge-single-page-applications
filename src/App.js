@@ -94,8 +94,9 @@ function App  () {
           <Link to='/help' className="link">Help</Link>
         </div>
       </nav>
-      
+        <Route path='/pizza'>
          <Form values={formValues} update={updateForm} submit={submiFrom} orders={orders} checkBox={checkboxChange} disabled={disabled} errors={formErrors}/>
+         </Route>
       
 
           {
