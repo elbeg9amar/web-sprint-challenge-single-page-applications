@@ -10,6 +10,12 @@ import Order from './Order'
 const initialFormValues= {
   username:'',
   size: '',
+  topping:{
+    cheese:false,
+    chicken:false,
+    apple:false,
+    meat:false,
+  }
 }
 
 
@@ -22,10 +28,20 @@ function App  () {
     setFormValue({...formValues,[name]:value})
   }
 
+  const checkboxChange = (name,isChecked) => {
+    setFormValue({
+      ...formValues,topping: {
+        ...formValues.topping,
+        [name]: isChecked
+      }
+    })
+  }
+
   const submiFrom = () => {
     const newOrder = {
       username:formValues.username.trim(),
       size: formValues.size,
+      topping: Object.keys(formValues.topping).filter(top => formValues.topping[top]),
     }
     if (!newOrder.username) return
 
@@ -45,7 +61,7 @@ function App  () {
         </div>
       </nav>
       
-         <Form values={formValues} update={updateForm} submit={submiFrom} orders={orders}/>
+         <Form values={formValues} update={updateForm} submit={submiFrom} orders={orders} checkBox={checkboxChange}/>
       
 
           {

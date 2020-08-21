@@ -2,12 +2,18 @@ import React from 'react'
 
 
 export default function Form(props) {
-const {update, submit, values} = props
+const {update, submit, values, checkBox} = props
 
 const onChange = evt => {
     const {name, value} = evt.target
     update(name, value)
 }
+
+const onCheckboxChange = evt => {
+    const { name, checked } = evt.target
+    checkBox(name, checked)
+  }
+
 const onSubmit = evt => {
     evt.preventDefault()
     submit()
@@ -38,7 +44,41 @@ const onSubmit = evt => {
                     <option value="extLarge">Extra Large</option>
                 </select>
             </label>
-
+            <div className='form-group checkboxes'>
+                <h4>topping</h4>
+                <label>cheese
+                    <input
+                      type="checkbox"
+                      name='cheese'
+                      checked={values.topping.cheese}
+                      onChange={onCheckboxChange}
+                    />
+                </label>
+                <label>chicken
+                    <input
+                      type="checkbox"
+                      name="chicken"
+                      checked={values.topping.chicken}
+                      onChange={onCheckboxChange}
+                    />
+                </label>
+                <label>apple
+                    <input
+                      type="checkbox"
+                      name="apple"
+                      checked={values.topping.apple}
+                      onChange={onCheckboxChange}
+                    />
+                </label>
+                <label>meat
+                    <input
+                      type="checkbox"
+                      name="meat"
+                      checked={values.topping.meat}
+                      onChange={onCheckboxChange}
+                    />
+                </label>
+            </div>
 
              <button >done</button>
             </div>
