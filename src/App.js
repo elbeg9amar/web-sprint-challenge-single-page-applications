@@ -8,7 +8,8 @@ import Order from './Order'
 
 
 const initialFormValues= {
-  username:''
+  username:'',
+  size: '',
 }
 
 
@@ -23,7 +24,8 @@ function App  () {
 
   const submiFrom = () => {
     const newOrder = {
-      username:formValues.username.trim()
+      username:formValues.username.trim(),
+      size: formValues.size,
     }
     if (!newOrder.username) return
 

@@ -28,6 +28,18 @@ const onSubmit = evt => {
                   type="text"
                 />            
              </label>
+
+             <label>Role:&nbsp;
+                <select value={values.size} onChange={onChange}name='size'>
+                    <option value="">-- Select a Size --</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large" >Large</option>
+                    <option value="extLarge">Extra Large</option>
+                </select>
+            </label>
+
+
              <button >done</button>
             </div>
         </div>
